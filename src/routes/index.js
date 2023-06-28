@@ -1,18 +1,8 @@
-import AppRoute from './app'
+import AppRoute from './appRoute'
 
 export default function Routes() {
 
-
-  // async function Verificar() {
-  //   const n = await AsyncStorage.getItem('@usuario')
-  //   if (n) { 
-  //     setConectado(true)
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   Verificar()
-  // }, [])
+  // será adcionados outras rotas
 
   return <AppRoute />
 }

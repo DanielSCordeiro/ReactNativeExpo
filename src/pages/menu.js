@@ -1,32 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-
-import { useNavigation } from '@react-navigation/native'
+import { Contexto } from '../context'
+import { Main } from '../styles/style'
+import { Container, Title } from '../styles/style-login'
+import { BotaoLink } from '../functions/navegar'
+import Daniel from '../svg/daniel'
 
 export default function Menu() {
-  const navigation = useNavigation()
-  
+  const { user } = Contexto()
+
   return (
-      <View style={styles.container}>
-        <Text>MENU</Text>
-        <TouchableOpacity onPress={() => {
-          navigation.reset({
-            index: 0,
-            routes: [{name: 'Login'}]
-          })
-        }}>
-          <Text>IR PARA LOGIN</Text>
-        </TouchableOpacity>
-        <StatusBar style="auto" />
-      </View>
+    <Main>
+      <Container>
+        <Daniel />
+        <Title>MENU</Title>
+        <BotaoLink page='Login' text='IR PARA LOGIN' />
+      </Container>
+    </Main>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

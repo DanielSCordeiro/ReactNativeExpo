@@ -1,17 +1,17 @@
 import { useNavigation } from '@react-navigation/native'
-import { TouchableOpacity, Text } from 'react-native'
+import { Botao, BotaoTexto } from '../styles/style-navegar'
 
-export function Link({page, texto}) {
+export function BotaoLink({page, text}) {
   const navigation = useNavigation()
 
   return (
-    <TouchableOpacity onPress={() => {
+    <Botao onPress={() => {
       navigation.reset({
         index: 0,
         routes: [{name: page}]
       })
     }}>
-      <Text>{texto}</Text>
-    </TouchableOpacity>
+      <BotaoTexto>{text}</BotaoTexto>
+    </Botao>
   )
 }

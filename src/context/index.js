@@ -4,16 +4,14 @@ const Context = createContext()
 
 export const ContextProvider = ({children}) => {
   const [conectado, setConectado] = useState(false)
-  const [page, setPage] = useState('Scan')
-  const [cupom, setCupom] = useState('')
-  const [user, setUser] = useState('')
+  const [cupom, setCupom] = useState(null)
+  const [user, setUser] = useState(null)
 
   return (
     <Context.Provider value={{
       conectado, setConectado,
-      page, setPage,
-      user, setUser,
-      cupom, setCupom
+      cupom, setCupom,
+      user, setUser
     }}>
       {children}
     </Context.Provider>
