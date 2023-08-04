@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native'
-import { Botao, BotaoTexto } from '../styles/style-navegar'
+import { Botao, BotaoTexto } from '../styles/style-botao'
 
 export function BotaoLink({page, text}) {
   const navigation = useNavigation()

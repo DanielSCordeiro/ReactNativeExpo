@@ -4,12 +4,13 @@ import { cores } from './cores'
 export const Botao = styled.TouchableOpacity`
   width: 100%;
   height: 48px;
-  background-color: ${cores.primary_400};
+  background-color: ${cores.confirm_100};
   align-items: center;
   justify-content: center;
   border-radius: 8px;
 `
 export const BotaoTexto = styled.Text`
-  color: ${cores.primary};
+  color: ${cores.forte_900};
   font-size: 16px;
+  font-weight: bold;
 `

@@ -1,8 +1,30 @@
+import { useEffect } from 'react'
+import { Platform } from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import { Contexto } from '../context'
 import AppRoute from './appRoute'
+import AuthRoute from './authRoute'
 
 export default function Routes() {
+  const { conectado, setConectado, setUser } = Contexto()
 
-  // será adcionados outras rotas
+  async function Verificar() {
+    let logado
+    if (Platform.OS === 'android' || Platform.OS === 'ios') {
+      logado = await AsyncStorage.getItem('us')
+    } else {
+      logado = localStorage.getItem('us') 
+    }
 
-  return <AppRoute />
+    if (logado) {
+      setConectado(true)
+      setUser(JSON.parse(logado))
+    }
+  }
+
+  useEffect(() => {
+    Verificar()
+  }, [])
+
+  return conectado ? <AuthRoute /> : <AppRoute />
 }

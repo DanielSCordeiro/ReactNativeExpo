@@ -1,7 +1,10 @@
 {
   "expo": {
-    "name": "showCadastro",
-    "slug": "showCadastro",
+    "plugins": [
+      ["expo-camera", {"cameraPermission": "Permissão para acessar a câmera"}]
+    ],
+    "name": "cadastro",
+    "slug": "cadastro",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -9,13 +12,16 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#1F2545"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Permissão para acessar a câmera"
+      }
     },
     "android": {
       "adaptiveIcon": {
