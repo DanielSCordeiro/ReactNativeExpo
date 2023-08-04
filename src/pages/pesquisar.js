@@ -15,7 +15,8 @@ export default function Pesquisar() {
   const [foto, setFoto] = useState(false)
   const [info, setInfo] = useState('')
   const [numero, setNumero] = useState('')
-  const imageUrl = `${IMG_URL}/${user.base}/${numero}.jpg`
+  const tempo = Date.now()
+  const imageUrl = `${IMG_URL}/${user.base}/${numero}.jpg?t=${tempo}`
 
   // nova pesquisa
   function NovaPesquisa() {
